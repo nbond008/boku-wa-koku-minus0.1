@@ -37,9 +37,9 @@
     }
 }
 
-if (keyboard_key == vk_left) {
+if (keyboard_key == vk_left || keyboard_check(ord('A'))) {
     hspeed = -4;
-} else if (keyboard_key == vk_right) {
+} else if (keyboard_key == vk_right || keyboard_check(ord('D'))) {
     hspeed = 4;
 } else if (hspeed &gt; 0) {
     hspeed = hspeed - 0.5;
@@ -47,10 +47,10 @@ if (keyboard_key == vk_left) {
     hspeed = hspeed + 0.5;
 }
 
-if (keyboard_key == vk_up &amp;&amp; depth &lt; 176) {
+if ((keyboard_key == vk_up || keyboard_check(ord('W'))) &amp;&amp; depth &lt; 176) {
     depth += 3;
     y -= 3;
-} else if (keyboard_key == vk_down &amp;&amp; depth &gt; 0) {
+} else if ((keyboard_key == vk_down || keyboard_check(ord('S'))) &amp;&amp; depth &gt; 0) {
     depth -= 3;
     y += 3;
 }
